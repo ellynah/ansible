@@ -1,0 +1,15 @@
+web1 ansible_ssh_host=172.18.66.76 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant username=ansible_user
+db1 ansible_ssh_host=172.18.66.86
+[webservers]
+web1
+
+[dbservers]
+db1
+
+[datacenter:children]
+webservers
+dbservers
+
+[datacenter:vars]
+ansible_ssh_user=vagrant
+ansible_ssh_pass=vagrant
